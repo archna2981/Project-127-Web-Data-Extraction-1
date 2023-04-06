@@ -16,6 +16,8 @@ scarped_data = []
 #Define Data Scrapping Method
 def scrape():
     
+    soup = BeautifulSoup(browser.page_source, "html.parser")
+    
     #Find <table>
     bright_star_table = soup.find("table" , attrs={"class","wikitable"})
 
@@ -44,6 +46,9 @@ def scrape():
 
         #Append data to star_data_list
         scarped_data.append(temp_list)
+
+#calling method 
+scrape()
 
 stars_data = []
 
